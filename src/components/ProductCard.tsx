@@ -182,7 +182,7 @@ export function ProductCard({ product }: ProductCardProps) {
         
         {/* Polaroid Caption Area */}
         <div className="p-4 bg-white">
-          <h3 className="text-lg font-disco-heading text-high-contrast mb-2 text-disco-bounce">
+          <h3 className="text-lg font-disco-heading text-high-contrast mb-2">
             {product.title}
           </h3>
           
@@ -201,7 +201,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <Button 
               onClick={handleAddToCart}
               size="sm" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-3 py-1 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 font-disco-body text-sm"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-3 py-1 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 font-disco-heading text-sm"
             >
               Add to Cart ✨
             </Button>

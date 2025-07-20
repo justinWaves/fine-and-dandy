@@ -34,7 +34,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
       }`} style={{ backgroundColor: 'white', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}>
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-white">
-          <h2 className="text-2xl font-disco-heading text-high-contrast text-disco-glow">Your Cart 🛒</h2>
+          <h2 className="text-2xl font-disco-heading text-high-contrast">Your Cart 🛒</h2>
           <button
             onClick={onClose}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"

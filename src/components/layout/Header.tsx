@@ -31,7 +31,7 @@ export function Header() {
         {/* Logo - Only visible on scroll */}
         {isScrolled && (
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-disco-title text-high-contrast text-disco-glow">
+            <span className="text-xl font-disco-heading text-high-contrast">
               FINE & DANDY
             </span>
           </Link>

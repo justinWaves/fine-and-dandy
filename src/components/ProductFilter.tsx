@@ -41,7 +41,7 @@ export function ProductFilter({ onFilterChange }: ProductFilterProps) {
 
   return (
     <div className="text-center">
-      <h2 className="text-lg font-disco-heading text-high-contrast mb-4 text-disco-neon">
+      <h2 className="text-lg font-disco-heading text-high-contrast mb-4">
         what are you shopping for? 🕺
       </h2>
       
@@ -55,7 +55,7 @@ export function ProductFilter({ onFilterChange }: ProductFilterProps) {
               key={category.value}
               onClick={() => handleFilterClick(category.value)}
               className={`
-                px-6 py-2 font-disco-body text-sm transition-all duration-200
+                px-6 py-2 font-disco-heading text-sm transition-all duration-200
                 ${isSelected 
                   ? 'bg-black/40 text-white font-bold' 
                   : 'bg-transparent text-white/80 hover:text-white hover:bg-black/20'

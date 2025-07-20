@@ -143,10 +143,14 @@ export default function Home() {
       {/* Simple Header Section */}
       <section className="py-8 text-center">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl md:text-7xl font-disco-title text-disco-glow mb-4">
-            FINE & DANDY
-          </h1>
-          <p className="text-xl text-disco-script text-high-contrast mb-2">
+          <div className="mb-4">
+            <img 
+              src="/fad-hero-logo.png" 
+              alt="Fine & Dandy" 
+              className="mx-auto max-w-md md:max-w-lg lg:max-w-xl"
+            />
+          </div>
+          <p className="text-xl font-disco-heading text-high-contrast mb-2">
             Jewelry and vintage apparel by 2 sisters in Santa Cruz, CA
           </p>
           <p className="text-base font-disco-body text-medium-contrast">
