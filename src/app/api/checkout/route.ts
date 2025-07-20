@@ -22,12 +22,14 @@ export async function POST(request: NextRequest) {
     }
     const checkoutUrl = `https://${storeDomain}/checkout`
     
-    // Add items to the checkout URL
-    const cartItems = items.map((item: { product: { handle: string }; quantity: number }) => 
-      `${item.product.handle}:${item.quantity}`
-    ).join(',')
+    // Add items to the checkout URL using Shopify's format
+    // Format: /checkout?items[0][id]=VARIANT_ID&items[0][quantity]=QUANTITY
+    const itemParams = items.map((item: { product: { variants: Array<{ id: string }>; id: string }; quantity: number }, index: number) => {
+      const variantId = item.product.variants[0]?.id || item.product.id
+      return `items[${index}][id]=${variantId}&items[${index}][quantity]=${item.quantity}`
+    }).join('&')
     
-    const finalCheckoutUrl = `${checkoutUrl}?items=${cartItems}`
+    const finalCheckoutUrl = `${checkoutUrl}?${itemParams}`
 
     return NextResponse.json({
       success: true,
