@@ -4,20 +4,21 @@ import { Facebook, Instagram, Mail, Phone, MapPin, Clock } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-green-600 to-green-700 py-8">
+    <footer className="bg-gradient-to-br from-green-600 to-green-700 py-6">
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="mb-4">
+            <div className="mb-6">
               <img 
                 src="/navbar-logo.png" 
                 alt="Fine & Dandy" 
-                className="h-32 w-auto"
+                className="h-48 w-auto max-w-md"
+                style={{ minHeight: '120px' }}
               />
             </div>
-            <p className="text-white/90 font-disco-body mb-3 leading-relaxed">
+            <p className="text-white/90 font-disco-body mb-2 leading-relaxed text-sm">
               Items are made with love by Kelsey and Mikaela, two sisters in Santa Cruz, California. 
               We believe every piece has a story, and every story deserves to be told. ✨
             </p>
