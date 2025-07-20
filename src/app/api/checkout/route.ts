@@ -22,15 +22,8 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
-        // Try using the cart page with product handles instead of variant IDs
-    const cartUrl = `https://${storeDomain}/cart`
-    
-    // Use product handles which are more reliable than variant IDs
-    const cartItems = items.map((item: { product: { handle: string }; quantity: number }) => 
-      `${item.product.handle}:${item.quantity}`
-    ).join(',')
-    
-    const finalCheckoutUrl = `${cartUrl}?items=${cartItems}`
+        // Try using the catalog page where users can see all products
+    const finalCheckoutUrl = `https://${storeDomain}/collections/all`
     
     console.log('Generated checkout URL:', finalCheckoutUrl)
     

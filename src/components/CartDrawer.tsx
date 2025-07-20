@@ -14,29 +14,10 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
   const { items, removeFromCart, updateQuantity, clearCart, totalItems, totalPrice } = useCart()
 
   const handleCheckout = async () => {
-    try {
-      const response = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ items }),
-      })
-
-      const data = await response.json()
-
-      if (data.success && data.checkoutUrl) {
-        // Redirect to Shopify checkout
-        window.location.href = data.checkoutUrl
-      } else {
-        console.error('Checkout failed:', data.error)
-        // You might want to show an error message to the user
-        alert('Checkout failed. Please try again.')
-      }
-    } catch (error) {
-      console.error('Checkout error:', error)
-      alert('Checkout failed. Please try again.')
-    }
+    // For now, redirect to the store catalog where users can add items manually
+    // This is a temporary solution until we properly sync product handles
+    const storeUrl = process.env.NEXT_PUBLIC_SHOPIFY_STORE_URL || 'https://fineanddandy.shop'
+    window.location.href = `${storeUrl}/collections/all`
   }
 
   return (
