@@ -1,26 +1,330 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 45 30% 95%;
+    --foreground: 25 40% 12%;
+    --primary: 25 85% 55%;
+    --primary-foreground: 45 30% 95%;
+    --secondary: 15 45% 65%;
+    --secondary-foreground: 25 40% 12%;
+    --muted: 35 25% 85%;
+    --muted-foreground: 25 30% 35%;
+    --accent: 45 85% 65%;
+    --accent-foreground: 25 40% 12%;
+    --destructive: 10 85% 55%;
+    --destructive-foreground: 45 30% 95%;
+    --border: 25 20% 75%;
+    --input: 35 20% 88%;
+    --ring: 25 85% 55%;
+    --card: 45 30% 95%;
+    --card-foreground: 25 40% 12%;
+    --popover: 45 30% 95%;
+    --popover-foreground: 25 40% 12%;
+    --success: 120 30% 60%;
+    --success-foreground: 25 40% 12%;
+    --warning: 45 85% 65%;
+    --warning-foreground: 25 40% 12%;
+    --info: 210 30% 65%;
+    --info-foreground: 25 40% 12%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 25 35% 8%;
+    --foreground: 48 33% 97%;
+    --primary: 25 85% 65%;
+    --primary-foreground: 25 35% 8%;
+    --secondary: 15 45% 25%;
+    --secondary-foreground: 48 33% 97%;
+    --muted: 25 25% 15%;
+    --muted-foreground: 25 25% 65%;
+    --accent: 45 85% 45%;
+    --accent-foreground: 25 35% 8%;
+    --destructive: 10 85% 65%;
+    --destructive-foreground: 48 33% 97%;
+    --border: 25 15% 20%;
+    --input: 25 15% 20%;
+    --ring: 25 85% 65%;
+    --card: 25 35% 12%;
+    --card-foreground: 48 33% 97%;
+    --popover: 25 35% 12%;
+    --popover-foreground: 48 33% 97%;
+    --success: 120 30% 40%;
+    --success-foreground: 48 33% 97%;
+    --warning: 45 85% 45%;
+    --warning-foreground: 25 35% 8%;
+    --info: 210 30% 35%;
+    --info-foreground: 48 33% 97%;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Custom Font Classes */
+  .font-display {
+    font-family: var(--font-playfair);
+  }
+  
+  .font-body {
+    font-family: var(--font-inter);
+  }
+  
+  .font-mono {
+    font-family: var(--font-space-mono);
+  }
+  
+  .font-handwritten {
+    font-family: var(--font-permanent-marker);
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+  
+  .text-polaroid-caption {
+    font-family: var(--font-permanent-marker);
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    transform: rotate(-0.5deg);
+  }
+  
+  /* Retro Typography Styles */
+  .text-retro {
+    font-family: var(--font-playfair);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-retro-light {
+    font-family: var(--font-playfair);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+  
+  .text-body {
+    font-family: var(--font-inter);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  
+  .text-body-bold {
+    font-family: var(--font-inter);
+    font-weight: 600;
+    line-height: 1.5;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Retro Button Styles */
+  .btn-retro {
+    @apply bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg 
+           shadow-lg hover:shadow-xl transition-all duration-300 
+           hover:scale-105 active:scale-95;
+  }
+  
+  .btn-retro-outline {
+    @apply border-2 border-primary text-primary font-semibold px-6 py-3 rounded-lg 
+           hover:bg-primary hover:text-primary-foreground transition-all duration-300 
+           hover:scale-105 active:scale-95;
+  }
+  
+  /* Retro Card Styles */
+  .card-retro {
+    @apply bg-card border-2 border-border rounded-xl shadow-lg 
+           hover:shadow-xl transition-all duration-300 hover:scale-[1.02];
+  }
+  
+  /* Retro Input Styles */
+  .input-retro {
+    @apply bg-input border-2 border-border rounded-lg px-4 py-3 
+           focus:border-primary focus:ring-2 focus:ring-primary/20 
+           transition-all duration-300;
+  }
+  
+  /* Retro Badge Styles */
+  .badge-retro {
+    @apply bg-accent text-accent-foreground font-semibold px-3 py-1 rounded-full 
+           text-sm shadow-md;
+  }
+  
+  /* Retro Gradient Backgrounds */
+  .bg-retro-gradient {
+    background: linear-gradient(135deg, hsl(25 85% 45%) 0%, hsl(45 85% 55%) 100%);
+  }
+  
+  .bg-retro-gradient-subtle {
+    background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--background)) 100%);
+  }
+  
+  /* Retro Text Shadows */
+  .text-shadow-retro {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-retro-strong {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Retro Border Styles */
+  .border-retro {
+    @apply border-2 border-border rounded-lg;
+  }
+  
+  .border-retro-dashed {
+    @apply border-2 border-dashed border-border rounded-lg;
+  }
+  
+  /* Retro Animation Classes */
+  .animate-retro-bounce {
+    animation: retro-bounce 0.6s ease-in-out;
+  }
+  
+  .animate-retro-pulse {
+    animation: retro-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Retro Hover Effects */
+  .hover-retro-lift {
+    @apply hover:scale-105 hover:shadow-xl transition-all duration-300;
+  }
+  
+  .hover-retro-glow {
+    @apply hover:shadow-lg hover:shadow-primary/25 transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  /* Custom Retro Utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Better Text Contrast Utilities */
+  .text-high-contrast {
+    color: hsl(25 40% 12%);
+  }
+  
+  .text-medium-contrast {
+    color: hsl(25 30% 25%);
+  }
+  
+  .text-subtle {
+    color: hsl(25 25% 40%);
+  }
+  
+  /* Card Background with Better Contrast */
+  .card-contrast {
+    background: hsl(45 25% 92%);
+    border: 2px solid hsl(25 20% 75%);
+  }
+  
+  /* Section Backgrounds */
+  .section-light {
+    background: hsl(45 30% 95%);
+  }
+  
+  .section-medium {
+    background: hsl(45 25% 92%);
+  }
+  
+  .section-dark {
+    background: hsl(25 20% 85%);
+  }
+  
+  .bg-pattern-retro {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--accent) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--primary) / 0.1) 0%, transparent 50%);
+  }
+  
+  .bg-pattern-dots {
+    background-image: radial-gradient(circle, hsl(var(--muted-foreground) / 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .bg-pattern-lines {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      hsl(var(--border) / 0.3) 10px,
+      hsl(var(--border) / 0.3) 20px
+    );
+  }
+}
+
+/* Custom Animations */
+@keyframes retro-bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+@keyframes retro-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 6px;
+  border: 2px solid hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.8);
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Selection Styles */
+::selection {
+  background: hsl(var(--primary) / 0.2);
+  color: hsl(var(--foreground));
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
 }
