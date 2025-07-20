@@ -21,15 +21,15 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
   return (
     <>
       {/* Backdrop */}
-      {isOpen && (
-        <div 
-          className="fixed inset-0 bg-black/50 z-40"
-          onClick={onClose}
-        />
-      )}
+      <div 
+        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-all duration-300 ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={onClose}
+      />
       
       {/* Drawer */}
-      <div className={`fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
+      <div className={`fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-[60] ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         {/* Header */}
