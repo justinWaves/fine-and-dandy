@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 import { Facebook, Instagram, Mail, Phone, MapPin, Clock } from "lucide-react"
 
 export function Footer() {
@@ -11,11 +10,9 @@ export function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <Image 
+              <img 
                 src="/navbar-logo.png" 
                 alt="Fine & Dandy" 
-                width={800}
-                height={240}
                 className="h-32 w-auto"
               />
             </div>
