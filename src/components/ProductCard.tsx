@@ -197,9 +197,22 @@ export function ProductCard({ product }: ProductCardProps) {
           
           {/* Price and Add to Cart */}
           <div className="flex items-center justify-between gap-2 mb-2">
-            <span className="text-xl text-polaroid-caption text-primary font-bold">
-              ${parseFloat(product.price).toFixed(2)}
-            </span>
+            <div className="flex flex-col">
+              {product.compareAtPrice && parseFloat(product.compareAtPrice) > parseFloat(product.price) ? (
+                <>
+                  <span className="text-lg text-polaroid-caption text-primary font-bold">
+                    ${parseFloat(product.price).toFixed(2)}
+                  </span>
+                  <span className="text-sm text-red-600 line-through font-disco-body">
+                    ${parseFloat(product.compareAtPrice).toFixed(2)}
+                  </span>
+                </>
+              ) : (
+                <span className="text-xl text-polaroid-caption text-primary font-bold">
+                  ${parseFloat(product.price).toFixed(2)}
+                </span>
+              )}
+            </div>
             {product.availableForSale ? (
               <Button 
                 onClick={handleAddToCart}
