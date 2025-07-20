@@ -48,8 +48,8 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
           {items.length === 0 ? (
             <div className="text-center py-12">
               <ShoppingCart className="h-16 w-16 mx-auto text-muted-foreground/60 mb-4" />
-              <p className="text-lg text-medium-contrast mb-2">Your cart is empty</p>
-              <p className="text-subtle">Add some products to get started!</p>
+              <p className="text-lg font-disco-body text-medium-contrast mb-2">Your cart is empty</p>
+              <p className="font-disco-body text-subtle">Add some products to get started!</p>
             </div>
           ) : (
             <div className="space-y-4">
@@ -72,10 +72,10 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
 
                   {/* Product Details */}
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-medium text-high-contrast truncate">
+                    <h3 className="font-disco-heading text-high-contrast truncate">
                       {item.product.title}
                     </h3>
-                    <p className="text-primary font-bold">
+                    <p className="text-primary font-disco-body font-bold">
                       ${parseFloat(item.product.price).toFixed(2)}
                     </p>
                   </div>
@@ -88,7 +88,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                     >
                       <Minus className="h-4 w-4" />
                     </button>
-                    <span className="w-8 text-center font-medium">{item.quantity}</span>
+                    <span className="w-8 text-center font-disco-body font-medium">{item.quantity}</span>
                     <button
                       onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
                       className="p-1 hover:bg-gray-200 rounded transition-colors"
@@ -115,8 +115,8 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
           <div className="border-t border-gray-200 p-6 space-y-4 bg-white">
             {/* Summary */}
             <div className="flex justify-between items-center">
-              <span className="text-lg font-medium text-high-contrast">Total ({totalItems} items)</span>
-              <span className="text-2xl font-bold text-primary">
+              <span className="text-lg font-disco-heading text-high-contrast">Total ({totalItems} items)</span>
+              <span className="text-2xl font-disco-body font-bold text-primary">
                 ${totalPrice.toFixed(2)}
               </span>
             </div>
@@ -132,7 +132,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
               <Button
                 onClick={clearCart}
                 variant="outline"
-                className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-disco-heading"
               >
                 Clear Cart
               </Button>
