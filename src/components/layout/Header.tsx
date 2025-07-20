@@ -25,7 +25,7 @@ export function Header() {
   return (
     <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${
       isScrolled 
-        ? 'bg-black/20 backdrop-blur-md border-b border-white/10' 
+        ? 'bg-white/80 backdrop-blur-md border-b border-gray-200/20' 
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -48,13 +48,13 @@ export function Header() {
         {/* Right Side Actions */}
         <div className="flex items-center space-x-4">
           {/* Search */}
-          <Button variant="ghost" size="icon" className="text-white hover:text-yellow-300">
+          <Button variant="ghost" size="icon" className="text-gray-800 hover:text-yellow-600">
             <Search className="h-5 w-5" />
           </Button>
 
           {/* Info */}
           <Link href="/info">
-            <Button variant="ghost" size="icon" className="text-white hover:text-yellow-300">
+            <Button variant="ghost" size="icon" className="text-gray-800 hover:text-yellow-600">
               <Info className="h-5 w-5" />
             </Button>
           </Link>
@@ -63,7 +63,7 @@ export function Header() {
           <Button 
             variant="ghost" 
             size="icon" 
-            className="text-white hover:text-yellow-300 relative"
+            className="text-gray-800 hover:text-yellow-600 relative"
             onClick={() => setIsCartOpen(true)}
           >
             <ShoppingCart className="h-5 w-5" />

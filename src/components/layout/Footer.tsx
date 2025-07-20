@@ -16,7 +16,7 @@ export function Footer() {
                 alt="Fine & Dandy" 
                 width={600}
                 height={180}
-                className="h-24 w-auto"
+                className="h-48 w-auto"
               />
             </div>
             <p className="text-white/90 font-disco-body mb-4 leading-relaxed">
