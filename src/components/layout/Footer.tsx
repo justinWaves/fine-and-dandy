@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Facebook, Instagram, Mail, Phone, MapPin, Clock } from "lucide-react"
 
 export function Footer() {
@@ -9,9 +10,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <h3 className="text-3xl font-disco-heading text-white mb-3">
-              FINE & DANDY
-            </h3>
+            <div className="mb-3">
+              <Image 
+                src="/navbar-logo.png" 
+                alt="Fine & Dandy" 
+                width={200}
+                height={60}
+                className="h-12 w-auto"
+              />
+            </div>
             <p className="text-white/90 font-disco-body mb-4 leading-relaxed">
               Items are made with love by Kelsey and Mikaela, two sisters in Santa Cruz, California. 
               We believe every piece has a story, and every story deserves to be told. ✨
