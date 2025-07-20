@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, Space_Mono, Permanent_Marker } from "next/font/google";
+import { Playfair_Display, Inter, Space_Mono, Permanent_Marker, Dancing_Script, Bebas_Neue, Righteous, Fredoka } from "next/font/google";
 import "./globals.css";
 import { SessionProvider } from "@/components/providers/SessionProvider";
 import { CartProvider } from "@/contexts/CartContext";
@@ -32,6 +32,34 @@ const permanentMarker = Permanent_Marker({
   display: "swap",
 });
 
+const dancingScript = Dancing_Script({
+  variable: "--font-dancing-script",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
+
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas-neue",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
+
+const righteous = Righteous({
+  variable: "--font-righteous",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
+
+const fredoka = Fredoka({
+  variable: "--font-fredoka",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Fine & Dandy - Curated Lifestyle Products",
   description: "Discover curated lifestyle products for the modern individual. Quality, style, and sophistication in every piece.",
@@ -45,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${playfair.variable} ${inter.variable} ${spaceMono.variable} ${permanentMarker.variable} antialiased min-h-screen flex flex-col`}
+        className={`${playfair.variable} ${inter.variable} ${spaceMono.variable} ${permanentMarker.variable} ${dancingScript.variable} ${bebasNeue.variable} ${righteous.variable} ${fredoka.variable} antialiased min-h-screen flex flex-col`}
       >
         <SessionProvider>
           <CartProvider>

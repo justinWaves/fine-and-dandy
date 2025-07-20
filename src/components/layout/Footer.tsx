@@ -8,11 +8,11 @@ export function Footer() {
         <div className="flex flex-col md:flex-row md:justify-between md:items-center space-y-6 md:space-y-0">
           {/* Logo and Tagline - Left Side */}
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold text-white mb-2">
+            <h3 className="text-2xl font-disco-title text-white mb-2 text-disco-glow">
               FINE & DANDY
             </h3>
-            <p className="text-sm text-white/90 font-permanent-marker">
-              Items are made with love by Kelsey and Mikaela, two sisters in Santa Cruz, California.
+            <p className="text-sm text-white/90 font-disco-script">
+              Items are made with love by Kelsey and Mikaela, two sisters in Santa Cruz, California. ✨
             </p>
           </div>
 
