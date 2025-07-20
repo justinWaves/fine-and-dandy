@@ -140,7 +140,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-cream to-warm-beige overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-cream to-warm-beige overflow-x-hidden pt-16">
       {/* Simple Header Section */}
       <section className="py-8 text-center">
         <div className="container mx-auto px-4">
