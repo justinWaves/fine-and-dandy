@@ -26,24 +26,19 @@ export function Header() {
     <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
       isScrolled 
         ? 'bg-black/20 backdrop-blur-md border-b border-white/10' 
-        : 'bg-transparent'
+        : 'bg-black/10 backdrop-blur-sm'
     }`}>
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo - Only visible on scroll */}
-        {isScrolled && (
-          <Link href="/" className="flex items-center">
-            <Image 
-              src="/navbar-logo.png" 
-              alt="Fine & Dandy" 
-              width={120}
-              height={40}
-              className="h-8 w-auto"
-            />
-          </Link>
-        )}
-
-        {/* Spacer when logo is not visible */}
-        {!isScrolled && <div></div>}
+        {/* Logo - Always visible */}
+        <Link href="/" className="flex items-center">
+          <Image 
+            src="/navbar-logo.png" 
+            alt="Fine & Dandy" 
+            width={180}
+            height={60}
+            className="h-12 w-auto"
+          />
+        </Link>
 
         {/* Right Side Actions */}
         <div className="flex items-center space-x-4">
