@@ -9,6 +9,11 @@ export interface ShopifyProduct {
   productType: string;
   vendor: string;
   tags: string[];
+  collections?: Array<{
+    id: string;
+    title: string;
+    handle: string;
+  }>;
   price: string;
   compareAtPrice?: string;
   currencyCode: string;
@@ -66,6 +71,15 @@ interface ShopifyProductEdge {
     productType: string;
     vendor: string;
     tags: string[];
+    collections?: {
+      edges: Array<{
+        node: {
+          id: string;
+          title: string;
+          handle: string;
+        };
+      }>;
+    };
     priceRange: {
       minVariantPrice: {
         amount: string;
@@ -149,6 +163,7 @@ export async function getShopifyProducts(limit: number = 50): Promise<ShopifyPro
         productType: product.productType,
         vendor: product.vendor,
         tags: product.tags,
+        collections: product.collections?.edges.map(edge => edge.node),
         price: firstVariant?.price?.amount || product.priceRange.minVariantPrice.amount,
         compareAtPrice: firstVariant?.compareAtPrice?.amount,
         currencyCode: firstVariant?.price?.currencyCode || product.priceRange.minVariantPrice.currencyCode,

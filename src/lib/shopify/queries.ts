@@ -10,6 +10,15 @@ export const GET_PRODUCTS = `
           productType
           vendor
           tags
+          collections(first: 10) {
+            edges {
+              node {
+                id
+                title
+                handle
+              }
+            }
+          }
           priceRange {
             minVariantPrice {
               amount

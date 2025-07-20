@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Suspense } from "react"
+import Image from "next/image"
 import { ShopifyProduct } from "@/lib/shopify/products"
 import { Button } from "@/components/ui/button"
 import { ShoppingCart, ChevronLeft, ChevronRight } from "lucide-react"
@@ -144,15 +145,15 @@ export default function Home() {
       <section className="py-8 text-center">
         <div className="container mx-auto px-4">
           <div className="mb-4">
-            <img 
+            <Image 
               src="/fad-hero-logo.png" 
               alt="Fine & Dandy" 
+              width={400}
+              height={200}
               className="mx-auto max-w-sm md:max-w-md lg:max-w-lg"
             />
           </div>
-          <p className="text-base font-disco-body text-medium-contrast">
-            Sunshine-fueled vintage dreamland ✨
-          </p>
+
         </div>
       </section>
 

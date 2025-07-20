@@ -19,11 +19,13 @@ export function ProductGrid({ products, itemsPerPage = 12, selectedFilters = ["j
   const filteredProducts = selectedFilters.length === 0 || selectedFilters.length === 3
     ? products 
     : products.filter(product => {
-        // If product has no productType, include it when "All" is selected
-        if (!product.productType || product.productType === "") {
+        // Check if product belongs to any of the selected collections
+        if (!product.collections || product.collections.length === 0) {
           return selectedFilters.length === 3 // "All" is selected
         }
-        return selectedFilters.includes(product.productType)
+        
+        const productCollectionHandles = product.collections.map(collection => collection.handle.toLowerCase())
+        return selectedFilters.some(filter => productCollectionHandles.includes(filter))
       })
 
   // Calculate pagination

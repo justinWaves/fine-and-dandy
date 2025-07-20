@@ -41,8 +41,8 @@ export function ProductFilter({ onFilterChange }: ProductFilterProps) {
 
   return (
     <div className="text-center">
-      <h2 className="text-lg font-disco-heading text-high-contrast mb-4">
-        what are you shopping for? 🕺
+      <h2 className="text-lg font-disco-body text-medium-contrast mb-4">
+       What are you shopping for? ✨
       </h2>
       
       {/* Horizontal Filter Bar */}
