@@ -1,14 +1,15 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Facebook, Instagram, Mail, Phone, MapPin, Clock } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-green-600 to-green-700 py-12">
+    <footer className="bg-gradient-to-br from-green-600 to-green-700 py-8">
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
           {/* Brand Section */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-2">
             <div className="mb-4">
               <img 
                 src="/navbar-logo.png" 
