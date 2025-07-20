@@ -10,13 +10,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="mb-3">
+            <div className="mb-6">
               <Image 
                 src="/navbar-logo.png" 
                 alt="Fine & Dandy" 
-                width={800}
-                height={240}
-                className="h-48 w-auto"
+                width={400}
+                height={120}
+                className="h-16 w-auto"
               />
             </div>
             <p className="text-white/90 font-disco-body mb-4 leading-relaxed">
