@@ -22,6 +22,12 @@ const CartContext = createContext<CartContextType | undefined>(undefined)
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([])
+  const [isClient, setIsClient] = useState(false)
+
+  // Prevent hydration mismatch by only rendering after client-side mount
+  React.useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const addToCart = (product: ShopifyProduct) => {
     setItems(prevItems => {
@@ -68,6 +74,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const price = parseFloat(item.product.price)
     return sum + (price * item.quantity)
   }, 0)
+
+  // Don't render until client-side to prevent hydration mismatch
+  if (!isClient) {
+    return <>{children}</>
+  }
 
   return (
     <CartContext.Provider value={{
