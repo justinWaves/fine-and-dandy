@@ -147,12 +147,9 @@ export default function Home() {
             <img 
               src="/fad-hero-logo.png" 
               alt="Fine & Dandy" 
-              className="mx-auto max-w-md md:max-w-lg lg:max-w-xl"
+              className="mx-auto max-w-sm md:max-w-md lg:max-w-lg"
             />
           </div>
-          <p className="text-xl font-disco-heading text-high-contrast mb-2">
-            Jewelry and vintage apparel by 2 sisters in Santa Cruz, CA
-          </p>
           <p className="text-base font-disco-body text-medium-contrast">
             Sunshine-fueled vintage dreamland ✨
           </p>
