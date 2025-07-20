@@ -11,10 +11,10 @@ export default function InfoPage() {
       <div className="container mx-auto px-4 py-12">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-retro text-shadow-retro mb-4">
+          <h1 className="text-4xl md:text-6xl font-disco-heading text-high-contrast mb-4">
             Meet Kelsey & Mikaela
           </h1>
-          <p className="text-xl text-body text-high-contrast font-permanent-marker">
+          <p className="text-xl font-disco-body text-medium-contrast">
             partners in disco and resale
           </p>
         </div>
@@ -23,15 +23,15 @@ export default function InfoPage() {
         <div className="max-w-4xl mx-auto">
           {/* About Section */}
           <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8 mb-8 shadow-retro border-2 border-retro/20">
-            <h2 className="text-2xl font-bold text-retro mb-4 text-shadow-retro">
+            <h2 className="text-2xl font-disco-heading text-high-contrast mb-4">
               Our Story
             </h2>
-            <p className="text-body text-high-contrast leading-relaxed mb-4">
+            <p className="font-disco-body text-high-contrast leading-relaxed mb-4">
               We&apos;re a pair of old souls who have been groovin&apos; together for over a decade. 
               Our shared passion for bygone styles, rad tunes, and far-out finds led us to 
               create Fine & Dandy.
             </p>
-            <p className="text-body text-high-contrast leading-relaxed">
+            <p className="font-disco-body text-high-contrast leading-relaxed">
               Thanks for supporting our shop!
             </p>
           </div>
@@ -40,10 +40,10 @@ export default function InfoPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Store Info */}
             <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8 shadow-retro border-2 border-retro/20">
-              <h3 className="text-xl font-bold text-retro mb-4 text-shadow-retro">
+              <h3 className="text-xl font-disco-heading text-high-contrast mb-4">
                 Visit Our Shop
               </h3>
-              <div className="space-y-3 text-body text-high-contrast">
+              <div className="space-y-3 font-disco-body text-high-contrast">
                 <p className="font-semibold">Fine & Dandy</p>
                 <p>123 Vintage Lane</p>
                 <p>Santa Cruz, CA 95060</p>
@@ -58,10 +58,10 @@ export default function InfoPage() {
 
             {/* Contact Details */}
             <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8 shadow-retro border-2 border-retro/20">
-              <h3 className="text-xl font-bold text-retro mb-4 text-shadow-retro">
+              <h3 className="text-xl font-disco-heading text-high-contrast mb-4">
                 Get In Touch
               </h3>
-              <div className="space-y-3 text-body text-high-contrast">
+              <div className="space-y-3 font-disco-body text-high-contrast">
                 <p>
                   <span className="font-semibold">Phone:</span><br />
                   (831) 555-0123
@@ -84,11 +84,11 @@ export default function InfoPage() {
 
           {/* Special Message */}
           <div className="mt-8 bg-gradient-to-r from-retro/10 to-warm-orange/10 rounded-lg p-8 text-center border-2 border-retro/20">
-            <p className="text-lg text-body text-high-contrast font-permanent-marker">
+            <p className="text-lg font-disco-body text-high-contrast">
               &ldquo;We believe every piece has a story, and every story deserves to be told. 
               Come dig through our treasures and find your next favorite thing!&rdquo;
             </p>
-            <p className="text-sm text-body text-high-contrast mt-2">
+            <p className="text-sm font-disco-body text-high-contrast mt-2">
               - Kelsey & Mikaela
             </p>
           </div>
