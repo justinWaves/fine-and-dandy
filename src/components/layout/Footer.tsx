@@ -16,16 +16,16 @@ export function Footer() {
                 className="h-20 w-auto mx-auto md:mx-0"
               />
             </div>
-            <p className="text-white/90 text-sm mb-4 leading-relaxed">
+            <p className="text-white/90 font-disco-body text-sm mb-4 leading-relaxed">
               Items are made with love by Kelsey and Mikaela, two sisters in Santa Cruz, California. 
               We believe every piece has a story, and every story deserves to be told. ✨
             </p>
             <div className="flex justify-center md:justify-start space-x-3">
               <Link href="#" className="text-white hover:text-yellow-300 transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20">
-                <Facebook className="h-5 w-5" />
+                <Facebook className="h-5 w-5 text-white" />
               </Link>
               <Link href="#" className="text-white hover:text-yellow-300 transition-colors duration-300 p-2 bg-white/10 rounded-full hover:bg-white/20">
-                <Instagram className="h-5 w-5" />
+                <Instagram className="h-5 w-5 text-white" />
               </Link>
             </div>
           </div>
@@ -33,7 +33,7 @@ export function Footer() {
           {/* Quick Links */}
           <div className="text-center md:text-left">
             <h4 className="text-lg font-disco-heading text-white mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 font-disco-body text-sm">
               <li>
                 <Link href="/" className="text-white/90 hover:text-white transition-colors duration-300">
                   Shop All
@@ -65,24 +65,24 @@ export function Footer() {
           {/* Contact Info */}
           <div className="text-center md:text-left">
             <h4 className="text-lg font-disco-heading text-white mb-4">Visit Us</h4>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 font-disco-body text-sm">
               <div className="flex items-start justify-center md:justify-start space-x-2">
-                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0 text-white" />
                 <div className="text-white/90">
                   <p>123 Vintage Lane</p>
                   <p>Santa Cruz, CA 95060</p>
                 </div>
               </div>
               <div className="flex items-center justify-center md:justify-start space-x-2">
-                <Phone className="h-4 w-4 flex-shrink-0" />
+                <Phone className="h-4 w-4 flex-shrink-0 text-white" />
                 <span className="text-white/90">(831) 555-0123</span>
               </div>
               <div className="flex items-center justify-center md:justify-start space-x-2">
-                <Mail className="h-4 w-4 flex-shrink-0" />
+                <Mail className="h-4 w-4 flex-shrink-0 text-white" />
                 <span className="text-white/90">hello@fineanddandy.com</span>
               </div>
               <div className="flex items-start justify-center md:justify-start space-x-2">
-                <Clock className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                <Clock className="h-4 w-4 mt-0.5 flex-shrink-0 text-white" />
                 <div className="text-white/90 text-sm">
                   <p>Tue-Sat: 11am-7pm</p>
                   <p>Sun: 12pm-5pm</p>
@@ -96,10 +96,10 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/20 pt-6 mt-8">
           <div className="flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0 text-center md:text-left">
-            <p className="text-sm text-white/80">
+            <p className="text-sm font-disco-body text-white/80">
               © 2024 Fine & Dandy. All rights reserved.
             </p>
-            <div className="flex justify-center md:justify-end space-x-6 text-sm text-white/80">
+            <div className="flex justify-center md:justify-end space-x-6 text-sm font-disco-body text-white/80">
               <Link href="#" className="hover:text-white transition-colors duration-300">
                 Privacy Policy
               </Link>
