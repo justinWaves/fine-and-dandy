@@ -1,30 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { shopifyClient } from '@/lib/shopify/client'
-
-const CREATE_CHECKOUT = `
-  mutation checkoutCreate($input: CheckoutCreateInput!) {
-    checkoutCreate(input: $input) {
-      checkout {
-        id
-        webUrl
-        lineItems(first: 10) {
-          edges {
-            node {
-              id
-              title
-              quantity
-            }
-          }
-        }
-      }
-      checkoutUserErrors {
-        code
-        field
-        message
-      }
-    }
-  }
-`
 
 export async function POST(request: NextRequest) {
   try {
@@ -39,62 +13,31 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Transform cart items to Shopify checkout line items
-    // We need to use the actual variant IDs from Shopify
-    const lineItems = items.map((item: { product: { variants: Array<{ id: string }>; id: string }; quantity: number }) => {
-      // Use the first variant ID, or fall back to product ID if no variants
-      const variantId = item.product.variants[0]?.id || item.product.id
-      return {
-        variantId: variantId,
-        quantity: item.quantity
-      }
-    })
-
-    console.log('Line items for checkout:', JSON.stringify(lineItems, null, 2))
-
-    // Create checkout session
-    const response = await shopifyClient.request(CREATE_CHECKOUT, {
-      input: {
-        lineItems: lineItems
-      }
-    })
-
-    console.log('Shopify response:', JSON.stringify(response, null, 2))
-
-    const { checkoutCreate } = response as {
-      checkoutCreate: {
-        checkout?: {
-          id: string
-          webUrl: string
-        }
-        checkoutUserErrors?: Array<{
-          code: string
-          field: string
-          message: string
-        }>
-      }
-    }
-
-    if (checkoutCreate.checkoutUserErrors && checkoutCreate.checkoutUserErrors.length > 0) {
-      console.error('Checkout errors:', checkoutCreate.checkoutUserErrors)
+    const storeDomain = process.env.SHOPIFY_STORE_DOMAIN
+    if (!storeDomain) {
       return NextResponse.json(
-        { error: 'Failed to create checkout', details: checkoutCreate.checkoutUserErrors },
-        { status: 400 }
-      )
-    }
-
-    if (!checkoutCreate.checkout) {
-      return NextResponse.json(
-        { error: 'Failed to create checkout - no checkout URL returned' },
+        { error: 'Shopify store domain not configured' },
         { status: 500 }
       )
     }
 
-    console.log('Generated checkout URL:', checkoutCreate.checkout.webUrl)
+    // Create cart URL with variant IDs
+    // Format: /cart/add?id=VARIANT_ID&quantity=QUANTITY
+    const cartItems = items.map((item: { product: { variants: Array<{ id: string }>; id: string }; quantity: number }) => {
+      const variantId = item.product.variants[0]?.id || item.product.id
+      // Extract just the ID number from the full GID
+      const idNumber = variantId.split('/').pop()
+      return `id=${idNumber}&quantity=${item.quantity}`
+    }).join('&')
+
+    // Create cart URL that will add items and redirect to checkout
+    const cartUrl = `https://${storeDomain}/cart/add?${cartItems}&return_to=/checkout`
+
+    console.log('Generated cart URL:', cartUrl)
     
     return NextResponse.json({
       success: true,
-      checkoutUrl: checkoutCreate.checkout.webUrl
+      checkoutUrl: cartUrl
     })
 
   } catch (error) {
