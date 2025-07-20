@@ -63,11 +63,14 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
       {/* Drawer */}
       <div 
         className={`fixed top-0 h-full w-96 bg-white shadow-2xl transition-all duration-300 ease-in-out z-[60] ${
-          isOpen ? 'right-0 pointer-events-auto' : 'right-[-100%] pointer-events-none'
+          isOpen ? 'right-0 pointer-events-auto' : 'pointer-events-none'
         }`} 
         style={{ 
           backgroundColor: 'white', 
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          // Completely hide drawer when closed - no horizontal scroll
+          right: isOpen ? '0' : '-100vw',
+          visibility: isOpen ? 'visible' : 'hidden'
         }}
       >
         {/* Header */}
