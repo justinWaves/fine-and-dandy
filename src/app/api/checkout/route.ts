@@ -20,9 +20,9 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
-    const checkoutUrl = `https://${storeDomain}/cart`
+    const checkoutUrl = `https://${storeDomain}/checkout`
     
-    // Add items to the cart URL
+    // Add items to the checkout URL
     const cartItems = items.map((item: { product: { handle: string }; quantity: number }) => 
       `${item.product.handle}:${item.quantity}`
     ).join(',')
