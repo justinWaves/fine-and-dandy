@@ -35,9 +35,9 @@ export function Header() {
             <Image 
               src="/navbar-logo.png" 
               alt="Fine & Dandy" 
-              width={360}
-              height={120}
-              className="h-24 w-auto"
+              width={720}
+              height={240}
+              className="h-48 w-auto"
             />
           </Link>
         )}

@@ -14,9 +14,9 @@ export function Footer() {
               <Image 
                 src="/navbar-logo.png" 
                 alt="Fine & Dandy" 
-                width={200}
-                height={60}
-                className="h-12 w-auto"
+                width={800}
+                height={240}
+                className="h-48 w-auto"
               />
             </div>
             <p className="text-white/90 font-disco-body mb-4 leading-relaxed">
