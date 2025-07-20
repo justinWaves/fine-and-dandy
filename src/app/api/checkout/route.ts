@@ -4,6 +4,8 @@ export async function POST(request: NextRequest) {
   try {
     const { items } = await request.json()
 
+    console.log('Checkout items received:', JSON.stringify(items, null, 2))
+
     if (!items || items.length === 0) {
       return NextResponse.json(
         { error: 'No items in cart' },
@@ -20,17 +22,18 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
-    const checkoutUrl = `https://${storeDomain}/checkout`
+        // Try using the cart page with product handles instead of variant IDs
+    const cartUrl = `https://${storeDomain}/cart`
     
-    // Add items to the checkout URL using Shopify's format
-    // Format: /checkout?items[0][id]=VARIANT_ID&items[0][quantity]=QUANTITY
-    const itemParams = items.map((item: { product: { variants: Array<{ id: string }>; id: string }; quantity: number }, index: number) => {
-      const variantId = item.product.variants[0]?.id || item.product.id
-      return `items[${index}][id]=${variantId}&items[${index}][quantity]=${item.quantity}`
-    }).join('&')
+    // Use product handles which are more reliable than variant IDs
+    const cartItems = items.map((item: { product: { handle: string }; quantity: number }) => 
+      `${item.product.handle}:${item.quantity}`
+    ).join(',')
     
-    const finalCheckoutUrl = `${checkoutUrl}?${itemParams}`
-
+    const finalCheckoutUrl = `${cartUrl}?items=${cartItems}`
+    
+    console.log('Generated checkout URL:', finalCheckoutUrl)
+    
     return NextResponse.json({
       success: true,
       checkoutUrl: finalCheckoutUrl
