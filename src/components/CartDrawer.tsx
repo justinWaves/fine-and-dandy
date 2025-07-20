@@ -13,9 +13,30 @@ interface CartDrawerProps {
 export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
   const { items, removeFromCart, updateQuantity, clearCart, totalItems, totalPrice } = useCart()
 
-  const handleCheckout = () => {
-    // TODO: Implement Shopify checkout
-    console.log('Proceeding to checkout...')
+  const handleCheckout = async () => {
+    try {
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ items }),
+      })
+
+      const data = await response.json()
+
+      if (data.success && data.checkoutUrl) {
+        // Redirect to Shopify checkout
+        window.location.href = data.checkoutUrl
+      } else {
+        console.error('Checkout failed:', data.error)
+        // You might want to show an error message to the user
+        alert('Checkout failed. Please try again.')
+      }
+    } catch (error) {
+      console.error('Checkout error:', error)
+      alert('Checkout failed. Please try again.')
+    }
   }
 
   return (
