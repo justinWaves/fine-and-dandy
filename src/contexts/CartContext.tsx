@@ -30,6 +30,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const addToCart = (product: ShopifyProduct) => {
+    // Prevent adding out-of-stock items to cart
+    if (!product.availableForSale) {
+      console.warn('Attempted to add out-of-stock product to cart:', product.title)
+      return
+    }
+    
     setItems(prevItems => {
       const existingItem = prevItems.find(item => item.product.id === product.id)
       

@@ -21,9 +21,28 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Filter out out-of-stock items
+    const availableItems = items.filter((item: { product: { availableForSale: boolean; variants: Array<{ availableForSale: boolean }>; id: string }; quantity: number }) => {
+      const isAvailable = item.product.availableForSale || 
+        (item.product.variants && item.product.variants.some(variant => variant.availableForSale))
+      
+      if (!isAvailable) {
+        console.warn('Filtering out out-of-stock item:', item.product.id)
+      }
+      
+      return isAvailable
+    })
+
+    if (availableItems.length === 0) {
+      return NextResponse.json(
+        { error: 'All items in cart are out of stock' },
+        { status: 400 }
+      )
+    }
+
     // Create cart URL with variant IDs
     // Format: /cart/add?id=VARIANT_ID&quantity=QUANTITY
-    const cartItems = items.map((item: { product: { variants: Array<{ id: string }>; id: string }; quantity: number }) => {
+    const cartItems = availableItems.map((item: { product: { variants: Array<{ id: string }>; id: string }; quantity: number }) => {
       const variantId = item.product.variants[0]?.id || item.product.id
       // Extract just the ID number from the full GID
       const idNumber = variantId.split('/').pop()

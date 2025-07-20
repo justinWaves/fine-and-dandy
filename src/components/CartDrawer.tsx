@@ -30,7 +30,11 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
         window.location.href = data.checkoutUrl
       } else {
         console.error('Checkout failed:', data.error)
-        alert('Checkout failed. Please try again.')
+        if (data.error === 'All items in cart are out of stock') {
+          alert('All items in your cart are out of stock. Please remove them and try again.')
+        } else {
+          alert('Checkout failed. Please try again.')
+        }
       }
     } catch (error) {
       console.error('Checkout error:', error)
@@ -82,7 +86,9 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
           ) : (
             <div className="space-y-4">
               {items.map((item) => (
-                <div key={item.product.id} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                <div key={item.product.id} className={`flex items-center space-x-4 p-4 rounded-lg ${
+                  !item.product.availableForSale ? 'bg-red-50 border border-red-200' : 'bg-gray-50'
+                }`}>
                   {/* Product Image */}
                   <div className="w-16 h-16 bg-white rounded-lg overflow-hidden flex-shrink-0">
                     {item.product.image?.url ? (
@@ -106,6 +112,11 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                     <p className="text-primary font-disco-body font-bold">
                       ${parseFloat(item.product.price).toFixed(2)}
                     </p>
+                    {!item.product.availableForSale && (
+                      <p className="text-red-600 text-sm font-disco-body font-medium">
+                        ⚠️ Out of Stock
+                      </p>
+                    )}
                   </div>
 
                   {/* Quantity Controls */}

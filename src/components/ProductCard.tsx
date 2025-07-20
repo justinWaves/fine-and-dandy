@@ -166,6 +166,15 @@ export function ProductCard({ product }: ProductCardProps) {
                   </div>
                 </div>
               )}
+              
+              {/* Out of Stock Overlay */}
+              {!product.availableForSale && (
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                  <div className="bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-bold font-disco-heading transform rotate-2">
+                    OUT OF STOCK
+                  </div>
+                </div>
+              )}
             </>
           ) : (
             /* Placeholder for product image */
@@ -191,13 +200,19 @@ export function ProductCard({ product }: ProductCardProps) {
             <span className="text-xl text-polaroid-caption text-primary font-bold">
               ${parseFloat(product.price).toFixed(2)}
             </span>
-            <Button 
-              onClick={handleAddToCart}
-              size="sm" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-3 py-1 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 font-disco-heading text-sm flex-shrink-0"
-            >
-              Add to Cart ✨
-            </Button>
+            {product.availableForSale ? (
+              <Button 
+                onClick={handleAddToCart}
+                size="sm" 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-3 py-1 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 font-disco-heading text-sm flex-shrink-0"
+              >
+                Add to Cart ✨
+              </Button>
+            ) : (
+              <div className="px-3 py-1 rounded-full bg-red-100 text-red-700 font-disco-heading text-sm flex-shrink-0 border border-red-200">
+                Out of Stock
+              </div>
+            )}
           </div>
           
 
