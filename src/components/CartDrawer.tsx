@@ -31,9 +31,9 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
       {/* Drawer */}
       <div className={`fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-[60] ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}>
+      }`} style={{ backgroundColor: 'white', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}>
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
+        <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-white">
           <h2 className="text-2xl font-permanent-marker text-high-contrast">Your Cart</h2>
           <button
             onClick={onClose}
@@ -44,7 +44,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
         </div>
 
         {/* Cart Items */}
-        <div className="flex-1 overflow-y-auto p-6">
+        <div className="flex-1 overflow-y-auto p-6 bg-white">
           {items.length === 0 ? (
             <div className="text-center py-12">
               <ShoppingCart className="h-16 w-16 mx-auto text-muted-foreground/60 mb-4" />
@@ -112,7 +112,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
 
         {/* Footer */}
         {items.length > 0 && (
-          <div className="border-t border-gray-200 p-6 space-y-4">
+          <div className="border-t border-gray-200 p-6 space-y-4 bg-white">
             {/* Summary */}
             <div className="flex justify-between items-center">
               <span className="text-lg font-medium text-high-contrast">Total ({totalItems} items)</span>
