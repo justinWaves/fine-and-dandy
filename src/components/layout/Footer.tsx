@@ -3,8 +3,11 @@ import { Facebook, Instagram, Mail, Phone, MapPin, Clock } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-green-600 to-green-700">
-      <div className="container mx-auto px-4 py-8">
+    <footer className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/footer-bg-grass.png)' }}>
+      <div className="container mx-auto px-4 py-8 relative">
+        {/* Semi-transparent overlay for better text readability */}
+        <div className="absolute inset-0 bg-green-600/70"></div>
+        <div className="relative z-10">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Section */}
@@ -108,6 +111,7 @@ export function Footer() {
               </Link>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </footer>

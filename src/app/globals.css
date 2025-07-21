@@ -75,13 +75,23 @@
   }
   
   /* Custom Cow Cursor */
-  body {
+  html, body {
     cursor: url('/cow-pointer.png') 16 16, auto !important;
   }
   
   /* Keep default cursor for interactive elements */
   button, a, input, textarea, select, [role="button"], [tabindex] {
     cursor: url('/cow-pointer.png') 16 16, pointer !important;
+  }
+  
+  /* Debug: Force cursor on all elements */
+  * {
+    cursor: url('/cow-pointer.png') 16 16, auto !important;
+  }
+  
+  /* Fallback: Test with a simple cursor first */
+  .test-cursor {
+    cursor: crosshair !important;
   }
   
   /* 🕺 DISCO TYPOGRAPHY SYSTEM 🕺 */
