@@ -143,11 +143,10 @@ export default function Home() {
     <div className="test-cursor">
       {/* Vimeo Video Background */}
       <div 
-        className="fixed inset-0 z-[-1]"
+        className="fixed inset-0 z-[-1] video-bg-desktop md:video-bg-mobile"
         style={{
           width: '100vw',
           height: '100vh',
-          transform: 'scale(1.5)',
           transformOrigin: 'center center'
         }}
       >

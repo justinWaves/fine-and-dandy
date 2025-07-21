@@ -73,6 +73,17 @@
     /* Allow overflow for video background */
   }
   
+  /* Video Background Responsive Scaling */
+  .video-bg-desktop {
+    transform: scale(2.5);
+  }
+  
+  @media (max-width: 768px) {
+    .video-bg-mobile {
+      transform: scale(3.5);
+    }
+  }
+  
   /* Custom Cow Cursor */
   html, body {
     cursor: url('/cow-pointer.png') 16 16, auto !important;
