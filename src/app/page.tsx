@@ -9,6 +9,7 @@ import { ShoppingCart, ChevronLeft, ChevronRight } from "lucide-react"
 import { ProductFilter } from "@/components/ProductFilter"
 import { ProductGrid } from "@/components/ProductGrid"
 import VideoBackground from "@/components/VideoBackground"
+import AnimatedFlowers from "@/components/AnimatedFlowers"
 
 export default function Home() {
   const [selectedFilters, setSelectedFilters] = useState<string[]>(["jewelry", "apparel", "accessories"])
@@ -172,6 +173,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* Space for Animated Flowers */}
+      <div className="h-32"></div>
+      
+      {/* Animated Flowers above Footer */}
+      <AnimatedFlowers />
       </div>
     </div>
   )

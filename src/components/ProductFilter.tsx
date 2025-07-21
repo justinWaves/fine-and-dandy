@@ -41,7 +41,7 @@ export function ProductFilter({ onFilterChange }: ProductFilterProps) {
 
   return (
     <div className="text-center">
-      <h2 className="text-lg font-disco-body text-medium-contrast mb-4">
+      <h2 className="text-lg font-disco-body mb-4 text-white">
        What are you shopping for? ✨
       </h2>
       
