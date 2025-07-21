@@ -3,9 +3,7 @@ import { Facebook, Instagram, Mail, Phone, MapPin, Clock } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-cover bg-center bg-no-repeat relative" style={{ backgroundImage: 'url(/footer-bg-grass.png)' }}>
-      {/* Top fade gradient */}
-      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-green-600/30 pointer-events-none"></div>
+    <footer className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/footer-bg-grass.png)' }}>
       <div className="container mx-auto px-4 py-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
