@@ -70,6 +70,7 @@
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow-x: hidden;
   }
   
   html {
@@ -77,12 +78,7 @@
     margin: 0;
     padding: 0;
     height: 100%;
-  }
-  
-  /* Ensure iframe respects object-cover */
-  iframe {
-    object-fit: cover;
-    object-position: center;
+    overflow-x: hidden;
   }
   
   /* Video Background - Clean implementation */
