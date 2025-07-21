@@ -84,7 +84,13 @@
   
   @media (max-width: 768px) {
     .video-bg-mobile {
-      transform: scale(3.5);
+      transform: scale(5);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .video-bg-mobile {
+      transform: scale(6);
     }
   }
   
