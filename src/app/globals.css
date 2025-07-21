@@ -78,23 +78,19 @@
   }
   
   /* Video Background Responsive Scaling */
-  .video-bg-desktop {
-    transform: scale(2.5);
-  }
-  
   @media (max-width: 768px) {
-    .video-bg-mobile {
-      transform: scale(8);
-      width: 100vw !important;
-      height: 100vh !important;
+    iframe[src*="vimeo"] {
+      width: 300vw !important;
+      height: 300vh !important;
+      transform: scale(0.33) !important;
     }
   }
   
   @media (max-width: 480px) {
-    .video-bg-mobile {
-      transform: scale(10);
-      width: 100vw !important;
-      height: 100vh !important;
+    iframe[src*="vimeo"] {
+      width: 400vw !important;
+      height: 400vh !important;
+      transform: scale(0.25) !important;
     }
   }
   

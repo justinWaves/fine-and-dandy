@@ -143,26 +143,20 @@ export default function Home() {
     <div className="test-cursor">
       {/* Vimeo Video Background */}
       <div 
-        className="fixed top-0 left-0 z-[-1] video-bg-desktop md:video-bg-mobile"
+        className="fixed inset-0 z-[-1] overflow-hidden"
         style={{
           width: '100vw',
-          height: '100vh',
-          transformOrigin: 'center center',
-          margin: 0,
-          padding: 0,
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0
+          height: '100vh'
         }}
       >
         <iframe
           src="https://player.vimeo.com/video/173166268?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1"
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0"
           style={{
-            width: '100vw',
-            height: '100vh'
+            width: '200vw',
+            height: '200vh',
+            transform: 'scale(0.5)',
+            transformOrigin: 'center center'
           }}
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
