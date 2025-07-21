@@ -144,7 +144,7 @@ export default function Home() {
       {/* Vimeo Video Background */}
       <div className="fixed inset-0 z-0 w-full h-screen">
         <iframe
-          src="https://player.vimeo.com/video/172816825?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1"
+          src="https://player.vimeo.com/video/173166268?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1"
           className="w-full h-full"
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
@@ -153,7 +153,7 @@ export default function Home() {
       </div>
       
       {/* Content Overlay */}
-      <div className="relative z-10 bg-black/20">
+      <div className="relative z-10">
       {/* Simple Header Section */}
       <section className="py-8 text-center">
         <div className="container mx-auto px-4">
