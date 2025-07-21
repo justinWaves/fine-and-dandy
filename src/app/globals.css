@@ -69,30 +69,17 @@
     font-feature-settings: "rlig" 1, "calt" 1;
     margin: 0;
     padding: 0;
+    height: 100%;
   }
   
   html {
     /* Allow overflow for video background */
     margin: 0;
     padding: 0;
+    height: 100%;
   }
   
-  /* Video Background Responsive Scaling */
-  @media (max-width: 768px) {
-    iframe[src*="vimeo"] {
-      width: 300vw !important;
-      height: 300vh !important;
-      transform: scale(0.33) !important;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    iframe[src*="vimeo"] {
-      width: 400vw !important;
-      height: 400vh !important;
-      transform: scale(0.25) !important;
-    }
-  }
+  /* Video Background - Clean implementation */
   
   /* Custom Cow Cursor */
   html, body {
