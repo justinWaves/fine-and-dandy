@@ -79,6 +79,12 @@
     height: 100%;
   }
   
+  /* Ensure iframe respects object-cover */
+  iframe {
+    object-fit: cover;
+    object-position: center;
+  }
+  
   /* Video Background - Clean implementation */
   
   /* Custom Cow Cursor */
