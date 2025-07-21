@@ -146,7 +146,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="mb-4">
             <Image 
-              src="/fad-hero-logo.png" 
+              src="/fad-hero-main.png" 
               alt="Fine & Dandy" 
               width={400}
               height={200}

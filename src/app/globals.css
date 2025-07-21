@@ -74,6 +74,16 @@
     overflow-x: hidden; /* Prevent horizontal scroll */
   }
   
+  /* Custom Cow Cursor */
+  * {
+    cursor: url('/cow-pointer.png'), auto;
+  }
+  
+  /* Keep default cursor for interactive elements */
+  button, a, input, textarea, select, [role="button"], [tabindex] {
+    cursor: url('/cow-pointer.png'), pointer;
+  }
+  
   /* 🕺 DISCO TYPOGRAPHY SYSTEM 🕺 */
   
   /* Main Font Classes */
