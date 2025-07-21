@@ -140,12 +140,12 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen overflow-x-hidden pt-16 test-cursor relative">
+    <div className="overflow-x-hidden test-cursor">
       {/* Vimeo Video Background */}
-      <div className="fixed inset-0 z-0 w-full h-screen overflow-hidden">
+      <div className="fixed inset-0 z-[-1] w-full h-screen overflow-hidden">
         <iframe
           src="https://player.vimeo.com/video/173166268?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full"
           style={{
             width: '100vw',
             height: '100vh',
@@ -159,7 +159,7 @@ export default function Home() {
       </div>
       
       {/* Content Overlay */}
-      <div className="relative z-10 min-h-screen">
+      <div className="relative z-10 pt-16">
       {/* Hero Section */}
       <section className="py-8 text-center">
         <div className="container mx-auto px-4">
