@@ -142,10 +142,10 @@ export default function Home() {
   return (
     <div className="min-h-screen overflow-x-hidden pt-16 test-cursor relative">
       {/* Vimeo Video Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="fixed inset-0 z-0 w-full h-screen">
         <iframe
           src="https://player.vimeo.com/video/172816825?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1"
-          className="w-full h-full object-cover"
+          className="w-full h-full"
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen
