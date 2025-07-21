@@ -149,7 +149,12 @@ export default function Home() {
           height: '100vh',
           transformOrigin: 'center center',
           margin: 0,
-          padding: 0
+          padding: 0,
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0
         }}
       >
         <iframe

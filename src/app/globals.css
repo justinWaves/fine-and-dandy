@@ -84,13 +84,17 @@
   
   @media (max-width: 768px) {
     .video-bg-mobile {
-      transform: scale(5);
+      transform: scale(8);
+      width: 100vw !important;
+      height: 100vh !important;
     }
   }
   
   @media (max-width: 480px) {
     .video-bg-mobile {
-      transform: scale(6);
+      transform: scale(10);
+      width: 100vw !important;
+      height: 100vh !important;
     }
   }
   
