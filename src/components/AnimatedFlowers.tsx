@@ -45,8 +45,8 @@ export default function AnimatedFlowers() {
           <Image 
             src="/Flower Parts/flower-head.png" 
             alt="Flower head" 
-            width={200}
-            height={200}
+            width={600}
+            height={600}
             className="flower-head-img"
             priority
           />
@@ -93,8 +93,8 @@ export default function AnimatedFlowers() {
           <Image 
             src="/Flower Parts/flower-head.png" 
             alt="Flower head" 
-            width={200}
-            height={200}
+            width={600}
+            height={600}
             className="flower-head-img"
             priority
           />
