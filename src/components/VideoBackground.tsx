@@ -15,7 +15,7 @@ export default function VideoBackground() {
       </div>
       
       {/* Desktop: Fill height and crop width */}
-      <div className="absolute top-1/2 left-1/2 w-[177.77vh] h-[100vh] -translate-x-1/2 -translate-y-1/2 hidden md:block">
+      <div className="absolute top-1/2 left-1/2 w-[177.77vh] h-[100vh] -translate-x-1/2 -translate-y-1/2 hidden md:block lg:w-[250vh] xl:w-[300vh]">
         <iframe
           src="https://player.vimeo.com/video/173166268?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
           className="w-full h-full"
