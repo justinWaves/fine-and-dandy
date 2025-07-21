@@ -6,7 +6,7 @@ export default function AnimatedFlowers() {
   return (
     <div className="relative w-full h-64 -mb-16">
       {/* Left Flower */}
-      <div className="absolute left-8 bottom-0 flower-container" style={{ position: 'relative' }}>
+      <div className="absolute left-8 bottom-0 flower-container">
         {/* Stem and Base */}
         <div className="relative flower-stem">
           <Image 
@@ -19,7 +19,7 @@ export default function AnimatedFlowers() {
         </div>
         
         {/* Left Leaf */}
-        <div className="absolute left-4 bottom-16 flower-leaf-left">
+        <div className="absolute left-2 bottom-20 flower-leaf-left">
           <Image 
             src="/Flower Parts/left-leaf.png" 
             alt="Left leaf" 
@@ -30,7 +30,7 @@ export default function AnimatedFlowers() {
         </div>
         
         {/* Right Leaf */}
-        <div className="absolute right-4 bottom-16 flower-leaf-right">
+        <div className="absolute right-2 bottom-20 flower-leaf-right">
           <Image 
             src="/Flower Parts/right-leaf.png" 
             alt="Right leaf" 
@@ -41,7 +41,7 @@ export default function AnimatedFlowers() {
         </div>
         
         {/* Flower Head */}
-        <div className="fixed" style={{ top: 'calc(100vh - 300px)', left: 'calc(8rem + 100px)', zIndex: 9999, border: '2px solid red' }}>
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flower-head" style={{ zIndex: 9999 }}>
           <Image 
             src="/Flower Parts/flower-head.png" 
             alt="Flower head" 
@@ -67,7 +67,7 @@ export default function AnimatedFlowers() {
         </div>
         
         {/* Left Leaf */}
-        <div className="absolute left-4 bottom-16 flower-leaf-left">
+        <div className="absolute left-2 bottom-20 flower-leaf-left">
           <Image 
             src="/Flower Parts/left-leaf.png" 
             alt="Left leaf" 
@@ -78,7 +78,7 @@ export default function AnimatedFlowers() {
         </div>
         
         {/* Right Leaf */}
-        <div className="absolute right-4 bottom-16 flower-leaf-right">
+        <div className="absolute right-2 bottom-20 flower-leaf-right">
           <Image 
             src="/Flower Parts/right-leaf.png" 
             alt="Right leaf" 
@@ -89,7 +89,7 @@ export default function AnimatedFlowers() {
         </div>
         
         {/* Flower Head - Inverted */}
-        <div className="fixed" style={{ top: 'calc(100vh - 300px)', right: 'calc(8rem + 100px)', zIndex: 9999, border: '2px solid blue', transform: 'scaleX(-1)' }}>
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 scale-x-[-1] flower-head" style={{ zIndex: 9999 }}>
           <Image 
             src="/Flower Parts/flower-head.png" 
             alt="Flower head" 
