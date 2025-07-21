@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function AnimatedFlowers() {
   return (
-    <div className="relative w-full h-64 -mb-16">
+    <div className="relative w-full h-96 -mb-16">
       {/* Left Flower */}
       <div className="absolute left-8 bottom-0 flower-container">
         {/* Stem and Base */}
@@ -45,8 +45,8 @@ export default function AnimatedFlowers() {
           <Image 
             src="/Flower Parts/flower-head.png" 
             alt="Flower head" 
-            width={600}
-            height={600}
+            width={800}
+            height={800}
             className="flower-head-img"
             priority
           />
@@ -89,12 +89,12 @@ export default function AnimatedFlowers() {
         </div>
         
         {/* Flower Head - Inverted */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 scale-x-[-1] flower-head" style={{ zIndex: 9999 }}>
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flower-head" style={{ zIndex: 9999, transform: 'translateX(-50%) scaleX(-1)' }}>
           <Image 
             src="/Flower Parts/flower-head.png" 
             alt="Flower head" 
-            width={600}
-            height={600}
+            width={800}
+            height={800}
             className="flower-head-img"
             priority
           />
