@@ -67,11 +67,10 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    overflow-x: hidden; /* Prevent horizontal scroll */
   }
   
   html {
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    /* Allow overflow for video background */
   }
   
   /* Custom Cow Cursor */

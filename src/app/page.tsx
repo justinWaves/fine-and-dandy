@@ -140,9 +140,9 @@ export default function Home() {
   }
 
   return (
-    <div className="overflow-x-hidden test-cursor">
+    <div className="test-cursor">
       {/* Vimeo Video Background */}
-      <div className="fixed inset-0 z-[-1] w-full h-screen overflow-hidden">
+      <div className="fixed inset-0 z-[-1] w-screen h-screen">
         <iframe
           src="https://player.vimeo.com/video/173166268?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1"
           className="absolute inset-0 w-full h-full"

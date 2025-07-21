@@ -78,7 +78,7 @@ export default function RootLayout({
         <SessionProvider>
           <CartProvider>
             <Header />
-            <main className="flex-1 overflow-x-hidden">
+            <main className="flex-1">
               {children}
             </main>
             <Footer />
