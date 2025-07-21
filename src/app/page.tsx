@@ -153,10 +153,10 @@ export default function Home() {
       </div>
       
       {/* Content Overlay */}
-      <div className="relative z-10">
-      {/* Hero Section - Full Viewport Height */}
-      <section className="h-screen flex items-center justify-center">
-        <div className="container mx-auto px-4 text-center">
+      <div className="relative z-10 min-h-screen">
+      {/* Hero Section */}
+      <section className="py-8 text-center">
+        <div className="container mx-auto px-4">
           <div className="mb-4">
             <Image 
               src="/fad-hero-main.png" 
