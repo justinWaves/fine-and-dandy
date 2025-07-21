@@ -75,13 +75,13 @@
   }
   
   /* Custom Cow Cursor */
-  * {
-    cursor: url('/cow-pointer.png'), auto;
+  body {
+    cursor: url('/cow-pointer.png') 16 16, auto !important;
   }
   
   /* Keep default cursor for interactive elements */
   button, a, input, textarea, select, [role="button"], [tabindex] {
-    cursor: url('/cow-pointer.png'), pointer;
+    cursor: url('/cow-pointer.png') 16 16, pointer !important;
   }
   
   /* 🕺 DISCO TYPOGRAPHY SYSTEM 🕺 */
