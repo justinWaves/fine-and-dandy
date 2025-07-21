@@ -143,11 +143,13 @@ export default function Home() {
     <div className="test-cursor">
       {/* Vimeo Video Background */}
       <div 
-        className="fixed inset-0 z-[-1] video-bg-desktop md:video-bg-mobile"
+        className="fixed top-0 left-0 z-[-1] video-bg-desktop md:video-bg-mobile"
         style={{
           width: '100vw',
           height: '100vh',
-          transformOrigin: 'center center'
+          transformOrigin: 'center center',
+          margin: 0,
+          padding: 0
         }}
       >
         <iframe
