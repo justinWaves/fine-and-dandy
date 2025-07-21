@@ -6,7 +6,7 @@ export default function AnimatedFlowers() {
   return (
     <div className="relative w-full h-64 overflow-hidden -mb-16">
       {/* Left Flower */}
-      <div className="absolute left-8 bottom-0 flower-container">
+      <div className="absolute left-8 bottom-0 flower-container" style={{ position: 'relative' }}>
         {/* Stem and Base */}
         <div className="relative flower-stem">
           <Image 
@@ -41,7 +41,7 @@ export default function AnimatedFlowers() {
         </div>
         
         {/* Flower Head */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flower-head z-20">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flower-head z-20" style={{ left: '50%', transform: 'translateX(-50%)', border: '2px solid red' }}>
           <Image 
             src="/Flower Parts/flower-head.png" 
             alt="Flower head" 
@@ -49,7 +49,6 @@ export default function AnimatedFlowers() {
             height={200}
             className="flower-head-img"
             priority
-            style={{ position: 'relative', zIndex: 20 }}
           />
         </div>
       </div>
@@ -90,7 +89,7 @@ export default function AnimatedFlowers() {
         </div>
         
         {/* Flower Head - Inverted */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 scale-x-[-1] flower-head z-20">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 scale-x-[-1] flower-head z-20" style={{ left: '50%', transform: 'translateX(-50%) scaleX(-1)', border: '2px solid blue' }}>
           <Image 
             src="/Flower Parts/flower-head.png" 
             alt="Flower head" 
@@ -98,7 +97,6 @@ export default function AnimatedFlowers() {
             height={200}
             className="flower-head-img"
             priority
-            style={{ position: 'relative', zIndex: 20 }}
           />
         </div>
       </div>
