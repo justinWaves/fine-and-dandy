@@ -1,135 +1,107 @@
 'use client';
 
-import Image from 'next/image';
+import React from 'react';
+
+// Individual Flower Component
+function Flower({ isRight = false }) {
+  return (
+    <div 
+      className="relative flower-container" 
+      style={{ 
+        width: '260px', 
+        height: '500px',
+        animation: 'flowerBounce 4s ease-in-out infinite',
+        animationDelay: isRight ? '0.5s' : '0s'
+      }}
+    >
+      {/* Stem */}
+      <img
+        src="/Flower Parts/stem-and-base.png"
+        alt="Flower stem and base"
+        className="flower-stem"
+        style={{
+          position: 'absolute',
+          left: '50%',
+          bottom: 0,
+          width: '80px',
+          height: '420px',
+          transform: 'translateX(-50%)',
+          zIndex: 1,
+          animation: 'stemSway 4s ease-in-out infinite',
+          animationDelay: isRight ? '0.5s' : '0s',
+          transformOrigin: 'bottom center',
+        }}
+      />
+      {/* Left Leaf */}
+      <img
+        src="/Flower Parts/left-leaf.png"
+        alt="Left leaf"
+        className="flower-leaf-left"
+        style={{
+          position: 'absolute',
+          left: '25px',
+          bottom: '120px',
+          width: '90px',
+          height: '110px',
+          transform: 'rotate(-10deg)',
+          zIndex: 2,
+          animation: 'leafWave 2.5s ease-in-out infinite',
+          animationDelay: isRight ? '0.8s' : '0s',
+          transformOrigin: 'bottom center',
+        }}
+      />
+      {/* Right Leaf */}
+      <img
+        src="/Flower Parts/right-leaf.png"
+        alt="Right leaf"
+        className="flower-leaf-right"
+        style={{
+          position: 'absolute',
+          right: '15px',
+          bottom: '110px',
+          width: '110px',
+          height: '120px',
+          transform: 'rotate(10deg)',
+          zIndex: 2,
+          animation: 'leafWave 2.5s ease-in-out infinite',
+          animationDelay: isRight ? '1.1s' : '0.3s',
+          transformOrigin: 'bottom center',
+        }}
+      />
+      {/* Head */}
+      <img
+        src="/Flower Parts/flower-head.png"
+        alt="Flower head"
+        className="flower-head"
+        style={{
+          position: 'absolute',
+          left: '50%',
+          top: '-60px',
+          width: '260px',
+          height: '260px',
+          transform: 'translateX(-50%)',
+          zIndex: 3,
+          animation: 'headBob 3s ease-in-out infinite',
+          animationDelay: isRight ? '0.5s' : '0s',
+          transformOrigin: 'bottom center',
+        }}
+      />
+    </div>
+  );
+}
 
 export default function AnimatedFlowers() {
   return (
-    <div className="relative w-full h-screen -mb-16">
+    <div className="relative w-full h-[60vh] min-h-[500px] -mb-16 flex items-end justify-between pointer-events-none select-none">
       {/* Left Flower */}
-      <div className="absolute left-8 bottom-0 flower-container">
-        {/* Stem and Base */}
-        <div className="relative flower-stem">
-          <Image 
-            src="/Flower Parts/stem-and-base.png" 
-            alt="Flower stem and base" 
-            width={160}
-            height={240}
-            className="flower-stem-img"
-          />
-        </div>
-        
-        {/* Left Leaf */}
-        <div className="absolute left-2 bottom-20 flower-leaf-left">
-          <Image 
-            src="/Flower Parts/left-leaf.png" 
-            alt="Left leaf" 
-            width={80}
-            height={120}
-            className="flower-leaf-img"
-          />
-        </div>
-        
-        {/* Right Leaf */}
-        <div className="absolute right-2 bottom-20 flower-leaf-right">
-          <Image 
-            src="/Flower Parts/right-leaf.png" 
-            alt="Right leaf" 
-            width={80}
-            height={120}
-            className="flower-leaf-img"
-          />
-        </div>
-        
-        {/* Flower Head */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flower-head" style={{ zIndex: 9999 }}>
-          <Image 
-            src="/Flower Parts/flower-head.png" 
-            alt="Flower head" 
-            width={1200}
-            height={1200}
-            className="flower-head-img"
-            priority
-          />
-        </div>
-      </div>
-
-      {/* Right Flower - Inverted */}
-      <div className="absolute right-8 bottom-0 flower-container flower-right">
-        {/* Stem and Base */}
-        <div className="relative flower-stem">
-          <Image 
-            src="/Flower Parts/stem-and-base.png" 
-            alt="Flower stem and base" 
-            width={160}
-            height={240}
-            className="flower-stem-img"
-          />
-        </div>
-        
-        {/* Left Leaf */}
-        <div className="absolute left-2 bottom-20 flower-leaf-left">
-          <Image 
-            src="/Flower Parts/left-leaf.png" 
-            alt="Left leaf" 
-            width={80}
-            height={120}
-            className="flower-leaf-img"
-          />
-        </div>
-        
-        {/* Right Leaf */}
-        <div className="absolute right-2 bottom-20 flower-leaf-right">
-          <Image 
-            src="/Flower Parts/right-leaf.png" 
-            alt="Right leaf" 
-            width={80}
-            height={120}
-            className="flower-leaf-img"
-          />
-        </div>
-        
-        {/* Flower Head - Inverted */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 scale-x-[-1] flower-head" style={{ zIndex: 9999 }}>
-          <Image 
-            src="/Flower Parts/flower-head.png" 
-            alt="Flower head" 
-            width={1200}
-            height={1200}
-            className="flower-head-img"
-            priority
-          />
-        </div>
+      <Flower isRight={false} />
+      
+      {/* Right Flower (mirrored) */}
+      <div style={{ transform: 'scaleX(-1)' }}>
+        <Flower isRight={true} />
       </div>
 
       <style jsx>{`
-        .flower-container {
-          animation: flowerBounce 4s ease-in-out infinite;
-        }
-        
-        .flower-right {
-          animation-delay: 0.5s;
-        }
-        
-        .flower-head {
-          animation: headBob 3s ease-in-out infinite;
-          transform-origin: bottom center;
-        }
-        
-        .flower-stem {
-          animation: stemSway 4s ease-in-out infinite;
-          transform-origin: bottom center;
-        }
-        
-        .flower-leaf-left {
-          animation: leafWave 2.5s ease-in-out infinite;
-          transform-origin: bottom center;
-        }
-        
-        .flower-leaf-right {
-          animation: leafWave 2.5s ease-in-out infinite 0.3s;
-          transform-origin: bottom center;
-        }
-        
         @keyframes flowerBounce {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           25% { transform: translateY(-8px) rotate(2deg); }
@@ -153,10 +125,10 @@ export default function AnimatedFlowers() {
         }
         
         @keyframes stemSway {
-          0%, 100% { transform: rotate(0deg); }
-          25% { transform: rotate(3deg); }
-          50% { transform: rotate(-2deg); }
-          75% { transform: rotate(1deg); }
+          0%, 100% { transform: translateX(-50%) rotate(0deg); }
+          25% { transform: translateX(-50%) rotate(3deg); }
+          50% { transform: translateX(-50%) rotate(-2deg); }
+          75% { transform: translateX(-50%) rotate(1deg); }
         }
         
         @keyframes leafWave {
